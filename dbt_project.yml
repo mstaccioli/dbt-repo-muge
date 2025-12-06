@@ -1,19 +1,23 @@
-
-
-name: dbt_day_ver1      # Projenin adı
-version: '1.0'
+name: 'my_new_project'
+version: '1.0.0'
 config-version: 2
 
-profile: default         # BigQuery profilin
+profile: 'default'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
 target-path: "target"
 clean-targets:
   - "target"
-  - "dbt_modules"
+  - "dbt_packages"
 
-model-paths: ["models"]
-macro-paths: ["macros"]
-snapshot-paths: ["snapshots"]
-seed-paths: ["seeds"]
-
-
+models:
+  my_new_project:
+    staging:
+      +materialized: view
 

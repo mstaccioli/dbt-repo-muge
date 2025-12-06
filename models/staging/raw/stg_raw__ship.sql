@@ -7,10 +7,9 @@ renamed as (
         orders_id,
         shipping_fee,
         shipping_fee_1,
-        logCost as log_cost,  
-        cast(ship_cost as float64) as ship_cost  
+        logCost as log_cost,
+        ship_cost
     from source
 )
 
 select * from renamed
-

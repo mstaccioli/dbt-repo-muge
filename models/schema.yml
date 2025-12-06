@@ -4,39 +4,42 @@ sources:
   - name: raw
     schema: gz_raw_data
     tables:
-      - name: sales
-        identifier: raw_gz_sales
-        description: Sales data from Greenweez
-        columns:
-          - name: date_date
-            description: Purchase date
-          - name: orders_id
-            description: Order ID
-          - name: product_id
-            description: Product ID
-        tests:
-          - unique_combination_of_columns:
-              combination_of_columns: ['orders_id', 'product_id']
       - name: product
         identifier: raw_gz_product
-        description: Product information
+        description: "Products of Greenweez"
         columns:
           - name: products_id
-            description: Product ID
-          - name: purchase_price
-            description: Product purchase price
+            description: "Product ID"
+          - name: purchSE_PRICE
+            description: "Price of the product"
+
+      - name: sales
+        identifier: raw_gz_sales
+        description: "Sales of Greenweez"
+        columns:
+          - name: date_date
+            description: "Date of purchase"
+          - name: orders_id
+            description: "Order ID"
+          - name: pdt_id
+            description: "Product ID in order"
+          - name: revenue
+            description: "Revenue of the order"
+          - name: quantity
+            description: "Quantity sold"
+
       - name: ship
         identifier: raw_gz_ship
-        description: Shipping data
+        description: "Shipping info"
         columns:
           - name: orders_id
-            description: Order ID
+            description: "Order ID"
           - name: shipping_fee
-            description: Shipping fee
+            description: "Shipping fee"
           - name: shipping_fee_1
-            description: Secondary shipping fee
-          - name: logcost
-            description: Logistical cost
+            description: "Alternate shipping fee"
+          - name: logCost
+            description: "Logistics cost"
           - name: ship_cost
-            description: Final shipping cost
+            description: "Shipping cost"
 
