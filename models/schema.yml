@@ -1,19 +1,8 @@
 version: 2
-sources:
-- name: raw
-  schema: gz_raw_data
-  tables:
-    - name: sales
-      identifier: raw_gz_sales
-    - name: product
-      identifier: raw_gz_product
-    - name: ship
-      identifier: raw_gz_ship
-version: 2
 
 sources:
   - name: raw
-    schema: gz_raw_data  # dataset adı
+    schema: gz_raw_data
     tables:
       - name: sales
         identifier: raw_gz_sales
@@ -29,6 +18,7 @@ sources:
             description: Revenue amount
           - name: quantity
             description: Quantity of product sold
+
       - name: product
         identifier: raw_gz_product
         description: Products of Greenweez
@@ -37,6 +27,7 @@ sources:
             description: Product ID
           - name: purchase_price
             description: Purchase price of the product
+
       - name: ship
         identifier: raw_gz_ship
         description: Shipping information
@@ -45,4 +36,5 @@ sources:
             description: Shipping fee
           - name: ship_cost
             description: Calculated shipping cost
+
 
